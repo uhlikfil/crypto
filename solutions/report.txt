@@ -1,0 +1,155 @@
+LAB 1
+
+'=== Exercise 1 ==='
+The ciphertext of 'the world is yours' against the key 'illmatic' is '1d04094d161b1b0f0d4c051e410d06161b1f'
+
+'=== Exercise 2 ==='
+The ciphertext '404b48484504404b48484504464d4848045d4b'contains a repeating pattern '404b48484504' at the beginning.Because it was encrypted with only a single letter key,it means that the plaintext also has a repetition at the beginning,probably two exact same words. Another visible pattern is '4848' at indices 4, 16, 28.This means that there are two identical letters at those positions.
+The plaintext of '404b48484504404b48484504464d4848045d4b' against the key '$' is 'dolla dolla bill yo'
+
+'=== Exercise 3 ==='
+'M': 'Busta Rhymes up in the place, tr'
+
+'=== Exercise 4 ==='
+Ok Ok, the key was indeed 'M'
+
+Busta Rhymes up in the place, true indeed
+Yes I catch wreck and that's word on my seed
+I'm guaranteed to give you what you need
+...
+
+'=== Exercise 5 ==='
+The multi-letter xor key is 'SupremeNTM', the first line is: "C'est le nouveau, phenomenal, fr"
+
+C'est le nouveau, phenomenal, freestyle du visage pale
+Le babtou est de retour, achtung!
+C'est parti, ca vient de Saint Denis
+Di...
+
+'=== Exercise 6 ==='
+The key length is 16, the key is 'CL4SS!C_TIM3L35S', the first line is: "And now for my next number I'd l"
+
+And now for my next number I'd like to return to the...
+Classic
+Uh, uh, - timeless
+Live straight classic
+Classic
+Live, straight ...
+
+'=== Exercise (bonus) ==='
+Here comes the brand new 'Flava In Ya Ear'
+
+
+
+LAB 2
+
+'=== Exercise 1 ==='
+I, Filip Uhlík, understand that cryptography is easy to mess up, andthat I will not carelessly combine pieces of cryptographic ciphers toencrypt my users' data. I will not write crypto code myself, but defer tohigh-level libaries written by experts who took the right decisions for me,like NaCL.
+
+'=== Exercise 2 ==='
+The AES ciphertext of '90 miles an hour' with the key 'CROSSTOWNTRAFFIC' is '092fb4b0aa77beddb5e55df37b73faaa'
+
+'=== Exercise 3 ==='
+The plaintext of 'fad2b9a02d4f9c850f3828751e8d1565' with the AES key 'VALLEYSOFNEPTUNE' is 'I feel the ocean'
+
+'=== Exercise 4 ==='
+'hello' with padding is 'hello\x0b\x0b\x0b\x0b\x0b\x0b\x0b\x0b\x0b\x0b\x0b' (hex: '68656c6c6f0b0b0b0b0b0b0b0b0b0b0b')
+
+'=== Exercise 5 ==='
+The unpadded string is 'hello'
+
+'=== Exercise 6 ==='
+The ciphertext of 'Well, I stand up next to a mountain and I chop it down with the edge of my hand' with the key 'vdchldslghtrturn' is '883319258b745592ef20db9dda39b076a84f4955a48ba9caecd1583641cf3acac86acd5e5795de7895fab54481e9d8c3afc179c39412282eb8445ea2450e763df7282998a74baf19887c843b658f8891'
+
+'=== Exercise 7 ==='
+The plaintext of '792c2e2ec4e18e9d3a82f6724cf53848abb28d529a85790923c94b5c5abc34f50929a03550e678949542035cd669d4c66da25e59a5519689b3b4e11a870e7cea' with the key 'If the mountains' is "If the mountains fell in the sea / Let it be, it ain't me"
+
+'=== Exercise 8 ==='
+1) There are a lot of repeating lines, it might mean the lyrics aren't too rich
+2) The last block is probably added padding
+3) Order has been restored
+4) The correct first line is 'People try to put us d-down    '
+
+'=== Exercise 9 ==='
+1) Welcome function implemented
+2) Welcome Jim ciphertext: 'd4d7730a2d4255c88dead80a2ad924f2b114fddb898d7ef8abdfefef30d552863f62b0605102e0186402df7666edcec7'
+3) A ciphertext block of all 16 bytes: '4e9eb1df207c25bebdcfc57385251689'
+4) A ciphertext block of 'you are an admin': '7edb62ceff6a92e3a59029a06e5e622b'
+5) The crafted ciphertext is 'd4d7730a2d4255c88dead80a2ad924f2b114fddb898d7ef8abdfefef30d552863f62b0605102e0186402df7666edcec7d5a656452eb0be2410a3fa9f7c24b6ab7edb62ceff6a92e3a59029a06e5e622b4e9eb1df207c25bebdcfc57385251689'
+6) The plaintext of the crafted ciphertext is 'Your name is Jim and you are a user\r\r\r\r\r\r\r\r\r\r\r\r\r___________ and you are an admin'
+7) If the ciphertext of such message, easily influencable by an attacker, was used for an actual authorization, it could lead to some kind of privilege escalation
+
+'=== Exercise 10 ==='
+Yay, I can now crack the 'hide_secret' function
+The next cracked byte would be always 1 because that's the padding added after the secret message
+
+
+
+LAB 3
+
+'=== Exercise 1 ==='
+The ciphertext of 'we are always running for the thrill of it' with the key 'WALKINGONADREAM.' is 'cbd575931bfdeeb1a05130e21101a41b9af086c361488de9bfda263ac2125640ea61b4214fc5048548d5f51dc3212ccb'
+
+'=== Exercise 2 ==='
+Decrypted back to 'we are always running for the thrill of it'
+
+'=== Exercise 3 ==='
+a) The first byte of the second block is: 'c', ascii decimal: 99, binary: '0b1100011'
+To change the byte into the letter 'b' ('0b1100010'), we'd need to change the rightmost bit to 0
+b) The ciphertext is 'f0791886535ec9fec61c33513c64fb30e6eef2e83aee82329b269ea504579e7f'
+c) The first byte of the second block is xored with the first byte of the ciphertext when decrypting
+Because of that, the bit flips we do in the first block of ciphertext propagate to the second block of decrypted text
+We can use XOR operation to flip the bit
+The modified ciphertext is 'f1791886535ec9fec61c33513c64fb30e6eef2e83aee82329b269ea504579e7f'
+After decrypting it we get b'<H\x82"~Jux\x05\x1b\xd0\xe4WS\x9afbar'
+The first block is all messed up by the bit flip, but the second block starts with 'bar'
+d) To change the letter we can flip more bits by XORing the ciphertext with a different value
+- the value is the difference between the letters we want to change
+The modified ciphertext is 'e4791886535ec9fec61c33513c64fb30e6eef2e83aee82329b269ea504579e7f'
+After decrypting it we get b'\xf3\xd9\xa5?\x02\xf6\xb9\x12\xaf\x8a\x93\xf3\xf69\x07Zwar'
+
+'=== Exercise 4 ==='
+Cryptographically-secure pseudorandom number generator
+The non-CS PRNG is a number generator which looks random, but is produced by a deterministic algorithm
+On the other hand, CSPRNG should be unpredictable. That's why it is better suited for cryptography
+If the attacker could guess the next IV we would use, our cipher would be in danger
+
+'=== Exercise 5 ==='
+The server has generated IV '485d27c2b931735a430a1f5af951245c' and encrypted text '19bf500affc8cce473335229640acafb23c9831ce77ef1bf7924546f820ac2b64eb7c71cb0b20653edb47c6f122bd22d'
+And can signal successful decryption
+
+'=== Exercise 6 ==='
+After a lot of trial and error I have finally created the 'crack_block' function which can handle the padding by backtracking
+I'm not sure if the backtracking is done the way it was meant by the assignment, but it works...
+
+
+
+LAB 4
+
+'=== Exercise 1 ==='
+a) b) c) Mersenne Twister seed implemented correctly
+
+d)
+'Explain what the operations with masks 0x80000000 and 0x7fffffff mean:'
+The operation takes the left-most bit from the v[i] and the rest of the bits from the v[(i+1)%n] numbers in v
+'Explain why xA in the pseudo-code above contains the result of the multiplication:'
+The shifted diagonal in the matrix represents the bit right shift
+When the last element of the vector is 1 (the if mask condition), then the last row of the matrix is taken into count - sum in base 2 is the equivalent of xor operation
+'Give a necessary and sufficient condition on the constant a, for A to be invertible. Is it satisfied by our constant a = 0x9908B0DF?'
+The determinant of the matrix must be non-zero. That's the case if the matrix contains only linearly independent rows and columns - a_31 must be 1. It is satisfied by a
+
+e) f) g) Mersenne Twister next implemented correctly
+
+'=== Exercise 2 ==='
+a) Assert passed, untemper implemented correctly, look into temper_visu.txt to see what you showed us on the last lecture :-)
+b) Multiplication of the two matrices produces an identity matrix
+c) Assert passed, untwist implemented correctly
+
+'=== Exercise 3 ==='
+a) b) Assert passed, PwResetToken implemented correctly
+c) Burning the token generator...
+Saving the next token...
+To recover the token, we can first recover the internal state of the MT, by getting 624 (the size of the internal list) numbers from it and untempering them
+Then we untwist and temper the list again to see the numbers that were generated before
+Somehow it's the last elements of the list, I don't really know why...
+Assert passed, the token has been recovered

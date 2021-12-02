@@ -1,0 +1,26 @@
+thanks for the sneak peak during the lecture
+
+l = 18
+u = 11
+t = 15
+s = 7
+
+y3              = Yyyyyyyy yyyyyyyy yyyyyyyy yyyyyyyy
+y3 >> l         = 00000000 00000000 00Yyyyyy yyyyyyyy
+z               = Yyyyyyyy yyyyyyyy yycccccc cccccccc
+
+y2              = Yyyyyyyy yyyyyyyb yyyyyyyy yyyyyyya   X
+y2 << t         = byyyyyyy yyyyyyyy a0000000 00000000
+c               = 11101111 11000110 00000000 00000000
+(y2 << y) & c   = byy0yyyy yy000yy0 00000000 00000000   X
+y3              = cccycccc ccyyyccb yyyyyyyy yyyyyyya   R
+
+y1              = Yyyyyyyy yyyyyyyy yyyyyyyy ybyyyyya   X
+y1 << s         = yyyyyyyy yyyyyyyy yybyyyyy a0000000
+b               = 10011101 00101100 01010110 10000000
+(y1 << s) & b   = y00yyy0y 00y0yy00 0y0y0yy0 a0000000   x
+y2              = cyycccyc yycyccyy ycycyccy cbyyyyya   R
+
+x               = Xxxxxxxx xxxxxxxx xxxxxxxx xxxxxxxx
+x >> u          = 00000000 000Xxxxx xxxxxxxx xxxxxxxx
+y1              = Xxxxxxxx xxxccccc cccccccc cccccccc
